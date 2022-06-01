@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
-import { Page } from "../components/layout/Page";
+import { Page } from "../components/base";
+
+import metadata from "../lib/static/metadata.json";
 
 const Home: NextPage = (): JSX.Element => {
     return (
-        <Page />
+        <Page name="Home" meta={metadata["home"]}>
+            <p className="text-2xl">Hello, World!</p>
+        </Page>
     );
 };
 
