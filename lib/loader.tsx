@@ -1,8 +1,3 @@
-import App from "../pages/_app";
-
-import { Loader as L } from "../components/Loader";
-import { render } from "react-dom";
-
 export class Loader {
     public loader: HTMLElement | null;
 
@@ -11,12 +6,10 @@ export class Loader {
     }
 
     public start(): void {
-        // @ts-ignore
-        render(<L />, <App />);
-        this.loader ? this.loader.style.display = "flex" : null;
+        this.loader ? this.loader.classList.replace("hidden", "flex") : null;
     }
 
-    public stop() {
-        this.loader ? this.loader.style.display = "none" : null;
+    public stop(): void {
+        this.loader ? this.loader.classList.replace("flex", "hidden") : null;
     }
 }

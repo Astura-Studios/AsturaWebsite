@@ -1,4 +1,5 @@
 import { Fragment, ReactNode } from "react";
+import { Loader } from "./Loader";
 import { Meta, MetaOptions } from "./Meta";
 import { Navigation } from "./Navigation";
 import type { NextComponentWithChildren } from "../lib/types";
@@ -13,8 +14,9 @@ export const Layout: NextComponentWithChildren<LayoutOptions> = (options: Layout
     return (
         <Fragment>
             <Meta {...options} />
+            <Loader />
             
-            <div>
+            <div id="root">
                 <Navigation />
 
                 <main>
