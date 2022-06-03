@@ -1,12 +1,17 @@
 import type { NextPage } from "next";
-import { Page } from "../components/base";
+import { Loader } from "../components/Loader";
+import type { NextPageProps } from "../lib/types";
 
-import metadata from "../lib/static/metadata.json";
+const Home: NextPage<NextPageProps> = ({ name }: NextPageProps): JSX.Element => {
+    return <>
+        <div className="h-screen w-screen flex flex-col justify-center items-center">
+            <h1>Redefining</h1>
+        </div>
+    </>
+};
 
-const Home: NextPage = (): JSX.Element => {
-    return <Page name="Home" meta={metadata["home"]}>
-        <p className="text-2xl">Hello, World!</p>
-    </Page>;
+Home.defaultProps = {
+    name: "Home"
 };
 
 export default Home;
